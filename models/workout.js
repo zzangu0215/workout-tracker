@@ -35,12 +35,15 @@ const workoutSchema = new Schema({
       sets: {
         type: Number,
       },
-      totalDuration: Number,
     },
   ],
+  totalDuration: {
+    type: Number,
+    default: 0,
+  },
 });
 
-workoutSchema.methods.totalDuration = function () {
+workoutSchema.methods.calculateTotalDuration = function () {
   let total = 0;
 
   for (let i = 0; i < this.exercises.length; i++) {
