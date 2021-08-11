@@ -38,12 +38,6 @@ router.post("/api/workouts", async (req, res) => {
 
 router.get("/api/workouts/range", async (req, res) => {
   try {
-    // const rawData = await new Workout(req.body);
-
-    // rawData.calculateTotalDuration();
-
-    // const rangeData = await Workout.create(rawData);
-
     const rangeData = await Workout.find();
 
     res.json(rangeData);
